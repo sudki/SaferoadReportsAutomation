@@ -1,19 +1,26 @@
 name: Daily Reports Tests
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 6 * * *"   # 09:00 صباحاً بتوقيت عمّان
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
           cache: maven
 
+      - name: Run TestNG suite
         env:
           CI: "true"
-        run: mvn -q test -DsuiteXmlFile=testng-daily-reports.xml
+        run: mvn test -DsuiteXmlFile=testng-daily-reports.xml
