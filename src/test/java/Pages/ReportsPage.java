@@ -18,7 +18,7 @@ public class ReportsPage {
     }
 
 
-    private By reportsMenu = By.xpath("//aside//a[contains(.,'Reports') or contains(.,'reports')]");
+    private By reportsMenu = By.xpath("/html/body/div[1]/aside/div[2]/div/ul/li[4]/a");
 
     private By utilizationReportsMenu = By.id("Utilization_reports_key");
 
@@ -64,7 +64,7 @@ public class ReportsPage {
         }
     }
     // القائمة الرئيسية للتقارير (Already exists in your project)
-    private By menuReports = By.xpath("//aside//a[contains(.,'Reports') or contains(.,'reports')]");
+    private By menuReports = By.xpath("/html/body/div[1]/aside/div[2]/div/ul/li[4]/a");
 
     // قائمة Speeding Reports
     private By speedingReportsMenu = By.id("Speeding_reports_key");
