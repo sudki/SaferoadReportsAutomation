@@ -17,7 +17,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-    private void hideChatWidgetIfExists() {
+    public void hideChatWidgetIfExists() {
         try {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript(
