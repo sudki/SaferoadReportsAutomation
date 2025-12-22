@@ -26,7 +26,6 @@ public class BaseTest {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--window-size=1920,1080");
         }
-
         // تشغيل Chrome بوضع Guest (بدون Google Account / Sync)
         options.addArguments("--guest");
 

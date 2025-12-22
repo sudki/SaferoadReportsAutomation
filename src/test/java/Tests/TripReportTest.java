@@ -1,10 +1,14 @@
 package Tests;
 
 import Base.BaseTest;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Pages.LoginPage;
 import Pages.ReportsPage;
+
+import java.time.Duration;
 
 public class TripReportTest extends BaseTest {
 
@@ -19,11 +23,7 @@ public class TripReportTest extends BaseTest {
         reportsPage.selectAllVehicles();
         reportsPage.clickShowReports();
 
-        boolean hasData = reportsPage.isReportHasData();
-
-
-        Assert.assertTrue(hasData, "trip Report has no data ");
-
-
+        Assert.assertTrue(reportsPage.isReportHasData(), "Trip Report has no data");
     }
+
 }
