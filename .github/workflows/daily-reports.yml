@@ -1,0 +1,28 @@
+name: Daily Reports Tests
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"   # 9 صباحًا بتوقيت الأردن (UTC+3)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run tests
+        run: mvn clean test
