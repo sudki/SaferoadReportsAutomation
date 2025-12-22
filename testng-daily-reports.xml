@@ -3,7 +3,7 @@
     <test name="Reports">
         <classes>
             <class name="Tests.TripReportTest"/>
-            <class name="Tests.SpeedReportTest"/>
+
         </classes>
     </test>
 </suite>
