@@ -3,7 +3,6 @@
     <test name="Reports">
         <classes>
             <class name="Tests.TripReportTest"/>
-
         </classes>
     </test>
 </suite>
