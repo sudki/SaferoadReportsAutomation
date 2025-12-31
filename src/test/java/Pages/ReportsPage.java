@@ -1,5 +1,6 @@
 package Pages;
 
+import Tests.WHM_Reports;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import java.time.Duration;
@@ -20,6 +21,7 @@ public class ReportsPage {
     private By tripReport = By.id("trip_Report");
     private By openOverSpeedReport = By.id("Speeding_reports_key");
     private By SpeedReport = By.id("Over_Speed_Report_key");
+    private By WHMReport = By.id("hours_And_Mileage_Daily_Reports");
     private By selectAllVehicles = By.xpath("//span[contains(@class,'rc-tree-checkbox')][1]");
     private By showReportsBtn = By.xpath("//button[contains(@class,'btn-primary') and contains(.,'Show Reports')]");
     private By tableRows = By.cssSelector(".ag-center-cols-container .ag-row.ag-row-level-0");
@@ -36,6 +38,20 @@ public class ReportsPage {
         jsClick(reportsMenu);
         jsClick(utilizationReports);
         jsClick(tripReport);
+    }
+    //overspeeding report
+    public void openOverSpeedReport() {
+        jsClick(sidebarToggleBtn);
+        jsClick(reportsMenu);
+        jsClick(openOverSpeedReport);
+        jsClick(SpeedReport);
+    }
+    //working hours mailage report
+    public void openWHM_Reports(){
+        jsClick(sidebarToggleBtn);
+        jsClick(reportsMenu);
+        jsClick(utilizationReports);
+        jsClick(WHMReport);
     }
 
     public void selectAllVehicles() {
@@ -88,11 +104,5 @@ public class ReportsPage {
     }
 
 
-    //overspeeding report
-    public void openOverSpeedReport() {
-        jsClick(sidebarToggleBtn);
-        jsClick(reportsMenu);
-        jsClick(openOverSpeedReport);
-        jsClick(SpeedReport);
-    }
+
 }

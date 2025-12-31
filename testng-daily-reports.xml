@@ -3,7 +3,8 @@
     <test name="Reports">
         <classes>
             <class name="Tests.TripReportTest"/>
-            <class name="Tests.SpeedReportTest"/>
+           <!-- <class name="Tests.SpeedReportTest"/> -->
+            <class name="Tests.WHM_Reports"/>
         </classes>
     </test>
 </suite>

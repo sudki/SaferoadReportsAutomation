@@ -21,18 +21,18 @@ public class BaseTest {
 
         ChromeOptions options = new ChromeOptions();
         if ("true".equalsIgnoreCase(System.getenv("CI"))) {
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--window-size=1920,1080");
+            options.addArguments("headless=new");
+            options.addArguments("no-sandbox");
+            options.addArguments("disable-dev-shm-usage");
+            options.addArguments("window-size=1920,1080");
         }
         // تشغيل Chrome بوضع Guest (بدون Google Account / Sync)
         options.addArguments("--guest");
 
         // تعطيل أي نوافذ أو تنبيهات
-        options.addArguments("--disable-notifications");
-        options.addArguments("--disable-save-password-bubble");
-        options.addArguments("--disable-features=PasswordLeakDetection,PasswordManagerOnboarding,PasswordChange");
+        options.addArguments("disable-notifications");
+        options.addArguments("disable-save-password-bubble");
+        options.addArguments("disable-features=PasswordLeakDetection,PasswordManagerOnboarding,PasswordChange");
 
         // تعطيل Password Manager نهائياً
         Map<String, Object> prefs = new HashMap<>();

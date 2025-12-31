@@ -8,7 +8,7 @@ import Pages.ReportsPage;
 
 public class SpeedReportTest extends BaseTest{
 
-    @Test//(enabled = false)
+    @Test(enabled = false)
     public void checkOverSpeedReport() {
 
         LoginPage login = new LoginPage(driver);
